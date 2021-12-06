@@ -11,7 +11,7 @@
 
         <variable
             name="viewmodel"
-            type="com.example.navigithubpr.prlist.PrViewModel" />
+            type="com.example.truecreditslist.ui.MainViewModel" />
 
     </data>
 

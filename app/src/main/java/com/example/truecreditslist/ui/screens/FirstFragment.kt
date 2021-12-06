@@ -32,51 +32,52 @@ class FirstFragment : Fragment() {
             viewmodel = viewModel
         }
         // Set the lifecycle owner to the lifecycle of the view
-        viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
-        return viewDataBinding.root    }
+//        viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
+        return viewDataBinding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentFirstBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+//        binding = FragmentFirstBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
 
 //        initAdapter()
 //        initSwipeToRefresh()
     }
-    private fun initAdapter() {
-        adapter = TruecreditPagingAdapter()
-//        binding.list.adapter = adapter.withLoadStateHeaderAndFooter(
-//            header = PostsLoadStateAdapter(adapter),
-//            footer = PostsLoadStateAdapter(adapter)
-//        )
-//
-//        lifecycleScope.launchWhenCreated {
-//            adapter.loadStateFlow.collect { loadStates ->
-//                binding.swipeRefresh.isRefreshing = loadStates.mediator?.refresh is LoadState.Loading
-//            }
-//        }
-//
-//        lifecycleScope.launchWhenCreated {
-//            model.posts.collectLatest {
-//                adapter.submitData(it)
-//            }
-//        }
-//
-//        lifecycleScope.launchWhenCreated {
-//            adapter.loadStateFlow
-//                // Use a state-machine to track LoadStates such that we only transition to
-//                // NotLoading from a RemoteMediator load if it was also presented to UI.
-//                .asMergedLoadStates()
-//                // Only emit when REFRESH changes, as we only want to react on loads replacing the
-//                // list.
-//                .distinctUntilChangedBy { it.refresh }
-//                // Only react to cases where REFRESH completes i.e., NotLoading.
-//                .filter { it.refresh is LoadState.NotLoading }
-//                // Scroll to top is synchronous with UI updates, even if remote load was triggered.
-//                .collect { binding.list.scrollToPosition(0) }
-//        }
-    }
-//
+//    private fun initAdapter() {
+//        adapter = TruecreditPagingAdapter()
+////        binding.list.adapter = adapter.withLoadStateHeaderAndFooter(
+////            header = PostsLoadStateAdapter(adapter),
+////            footer = PostsLoadStateAdapter(adapter)
+////        )
+////
+////        lifecycleScope.launchWhenCreated {
+////            adapter.loadStateFlow.collect { loadStates ->
+////                binding.swipeRefresh.isRefreshing = loadStates.mediator?.refresh is LoadState.Loading
+////            }
+////        }
+////
+////        lifecycleScope.launchWhenCreated {
+////            model.posts.collectLatest {
+////                adapter.submitData(it)
+////            }
+////        }
+////
+////        lifecycleScope.launchWhenCreated {
+////            adapter.loadStateFlow
+////                // Use a state-machine to track LoadStates such that we only transition to
+////                // NotLoading from a RemoteMediator load if it was also presented to UI.
+////                .asMergedLoadStates()
+////                // Only emit when REFRESH changes, as we only want to react on loads replacing the
+////                // list.
+////                .distinctUntilChangedBy { it.refresh }
+////                // Only react to cases where REFRESH completes i.e., NotLoading.
+////                .filter { it.refresh is LoadState.NotLoading }
+////                // Scroll to top is synchronous with UI updates, even if remote load was triggered.
+////                .collect { binding.list.scrollToPosition(0) }
+////        }
+//    }
+
 //    private fun initSwipeToRefresh() {
 //        binding.swipeRefresh.setOnRefreshListener { adapter.refresh() }
 //    }
