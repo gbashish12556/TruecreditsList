@@ -13,9 +13,6 @@ class TruecreditsApplication : Application() {
     val prRepository: TruecreditPostRepo
         get() = serviceLocator.getRepository()
 
-    val api: TruecreditsApi
-        get() = serviceLocator.getTrueCreditsApi()
-
 
     override fun onCreate() {
         super.onCreate()

@@ -33,7 +33,6 @@ interface ServiceLocator {
 
     fun getRepository(): TruecreditPostRepo
 
-    fun getTrueCreditsApi(): TruecreditsApi
 }
 
 /**
@@ -51,9 +50,8 @@ open class DefaultServiceLocator(val app: Application) : ServiceLocator {
     override fun getRepository(): TruecreditPostRepo {
          return TruecreditRepo(
                 db = db,
-                truecreditsApi = getTrueCreditsApi()
+                truecreditsApi = api
             )
     }
 
-    override fun getTrueCreditsApi(): TruecreditsApi = api
 }
