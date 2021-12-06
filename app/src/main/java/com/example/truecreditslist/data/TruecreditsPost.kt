@@ -18,7 +18,7 @@ data class TruecreditsPost(
     @SerializedName("image_url")
     val imageUrl: Int,
     @SerializedName("is_checked")
-    val isChecked: Boolean?
+    val isChecked: Boolean = false
 
 ){
     var indexInResponse: Int = -1

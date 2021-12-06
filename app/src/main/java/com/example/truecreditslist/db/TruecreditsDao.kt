@@ -14,6 +14,12 @@ interface TruecreditsDao {
     suspend fun insertAll(posts: List<TruecreditsPost>)
 
     @Query("SELECT * FROM truecredit_post WHERE name = :name ORDER BY indexInResponse ASC")
-    fun postsBySubreddit(name: String): PagingSource<Int, TruecreditsPost>
+    fun postsByName(name: String): PagingSource<Int, TruecreditsPost>
+
+    @Query("SELECT * FROM truecredit_post")
+    fun allPosts(): PagingSource<Int, TruecreditsPost>
+
+    @Query("DELETE FROM truecredit_post")
+    suspend fun deleteAllPosts()
 
 }

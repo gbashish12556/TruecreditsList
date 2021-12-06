@@ -15,8 +15,8 @@ abstract class TruecreditsApi {
 
     @GET("v2/beers")
     abstract suspend fun getListData(
-        @Query("page") limit: Int,
-        @Query("per_page") after: String? = null,
+        @Query("page") pageNo: Int,
+        @Query("per_page") perPage: Int,
     ): Call<List<TruecreditsPost>>
 
     companion object {
